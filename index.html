@@ -1,0 +1,185 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <title>МИР</title>
+
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="https://yastatic.net/bootstrap/3.3.4/css/bootstrap.min.css">
+	
+  <style>
+	#header{
+	  position: absolute;
+	  background: #8B0000;
+	  width: 100%;
+	  height: 15%;
+	  left: 0px;
+	  top: 0px;
+	}
+    #map{
+      position: absolute;
+      background: #FFF8DC;
+      left: 1%;
+      right: 1%;
+      top: 16%;
+      bottom: 30px; 
+    }
+	#text{
+      position: absolute;
+      background: #FFF8DC;
+	  left: 0%;
+      right: 0%;
+      top: 15%;
+      bottom: 30px;
+    }
+	#footer{
+      position: absolute;
+      background: #DEB887;
+	  height: 30px;
+      left: 0px;
+      right:0px;
+      bottom: 0px;
+	}
+	.styletest {
+	  color: #FFF8DC; 
+	  font-size: 80px; 
+	  font-family: Georgia;
+	  text-shadow: black 0 0 10px;
+	}
+  </style>   
+</head>
+<body>
+ <div id="header">
+  <div align="center"><font class="styletest">МИР</font></div>
+ </div>
+ 
+ <div id="text"></div>
+ 
+ <div id="map">
+ <script type="text/javascript">
+    ymaps.ready(init);
+    var myMap;
+
+    function init(){     
+        myMap = new ymaps.Map("map", {
+            center: [30.00, 30.00],
+            zoom: 3
+        }),
+        clusterer = new ymaps.Clusterer({clusterDisableClickZoom: true}),
+        getPointData = function (index) {
+            return {
+                balloonContentBody: 'Привет! <img src="' + content[index] + '" alt="альтернативный текст" width="200">"',
+                clusterCaption: 'МИИГАиК <strong>' + index + '</strong>'
+            };
+        },
+        points = [
+        ],
+        geoObjects = [];
+
+//Записываем геометри__________________
+		 
+	geoObjects[geoObjects.length] = new ymaps.Placemark([44.436668, 26.100045], { clusterCaption: '1', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1739877/1739877_2000.jpg" alt="альтернативный текст" width="200">"'}, {
+      preset: 'islands#redGlyphIcon',            
+      iconGlyph: 'star',
+      iconGlyphColor: 'red',
+    });
+	
+		 
+	geoObjects[geoObjects.length] = new ymaps.Placemark([55.419863, 37.539801], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1761484/1761484_2000.jpg" alt="альтернативный текст" width="200">"'}, {
+      preset: 'islands#redGlyphIcon',            
+      iconGlyph: 'star',
+      iconGlyphColor: 'red',
+    });
+
+	 
+	geoObjects[geoObjects.length] = new ymaps.Placemark([55.752007, 37.617912], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1762202/1762202_original.jpg" alt="альтернативный текст" width="200">"'}, {
+      preset: 'islands#redGlyphIcon',            
+      iconGlyph: 'star',
+      iconGlyphColor: 'red',
+    });
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([59.930095, 30.321093], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1758619/1758619_original.jpg" alt="альтернативный текст" width="200">"'}, {
+      preset: 'islands#redGlyphIcon',            
+      iconGlyph: 'star',
+      iconGlyphColor: 'red',
+    });
+	
+	geoObjects[geoObjects.length] = new ymaps.Placemark([55.752007, 37.617912], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1756193/1756193_original.jpg" alt="альтернативный текст" width="200">"'}, {
+      preset: 'islands#redGlyphIcon',            
+      iconGlyph: 'star',
+      iconGlyphColor: 'red',
+    });
+	
+	geoObjects[geoObjects.length] = new ymaps.Placemark([46.039605, 24.894001], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1754223/1754223_2000.jpg" alt="альтернативный текст" width="200">"'}, {
+      preset: 'islands#redGlyphIcon',            
+      iconGlyph: 'star',
+      iconGlyphColor: 'red',
+    });
+	
+	geoObjects[geoObjects.length] = new ymaps.Placemark([36.803475, 10.172322], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1752256/1752256_original.jpg" alt="альтернативный текст" width="200">"'}, {
+      preset: 'islands#redGlyphIcon',            
+      iconGlyph: 'star',
+      iconGlyphColor: 'red',
+    });
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([27.713476, 85.309570], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1746212/1746212_2000.jpg" alt="альтернативный текст" width="200">"'}, {
+      preset: 'islands#redGlyphIcon',            
+      iconGlyph: 'star',
+      iconGlyphColor: 'red',
+    });
+	
+	geoObjects[geoObjects.length] = new ymaps.Placemark([55.102342, 36.624824], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1750494/1750494_2000.jpg" alt="альтернативный текст" width="200">"'}, {
+      preset: 'islands#redGlyphIcon',            
+      iconGlyph: 'star',
+      iconGlyphColor: 'red',
+    });
+	
+	geoObjects[geoObjects.length] = new ymaps.Placemark([35.669550, 51.423130], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1744799/1744799_original.jpg" alt="альтернативный текст" width="200">"'}, {
+      preset: 'islands#redGlyphIcon',            
+      iconGlyph: 'star',
+      iconGlyphColor: 'red',
+    });
+	
+	geoObjects[geoObjects.length] = new ymaps.Placemark([42.690115, 23.309803], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1740095/1740095_2000.jpg" alt="альтернативный текст" width="200">"'}, {
+      preset: 'islands#redGlyphIcon',            
+      iconGlyph: 'star',
+      iconGlyphColor: 'red',
+    });
+	
+		geoObjects[geoObjects.length] = new ymaps.Placemark([30.056953, 31.248723], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1751636/1751636_2000.jpg" alt="альтернативный текст" width="200">"'}, {
+      preset: 'islands#redGlyphIcon',            
+      iconGlyph: 'star',
+      iconGlyphColor: 'red',
+    });
+
+
+
+
+
+
+//Закончили запись меток	
+		
+		clusterer.add(geoObjects);
+		myMap.geoObjects.add(clusterer);
+
+	/*	// Откроем балун на третьей метке в массиве.
+		var objectState = clusterer.getObjectState(geoObjects[2]);
+		if (objectState.isClustered) {
+			// Если метка находится в кластере, выставим ее в качестве активного объекта.
+			// Тогда она будет "выбрана" в открытом балуне кластера.
+			objectState.cluster.state.set('activeObject', geoObjects[2]);
+			clusterer.balloon.open(objectState.cluster);
+		} else if (objectState.isShown) {
+			// Если метка не попала в кластер и видна на карте, откроем ее балун.
+			geoObjects[2].balloon.open();
+		}	*/	
+		
+
+    }
+
+</script>
+ </div>
+ 
+ <div id="footer"align="right">Подвал</div>
+  
+</body>
+</html>
