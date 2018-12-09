@@ -21,7 +21,7 @@
       left: 1%;
       right: 1%;
       top: 16%;
-      bottom: 30px; 
+      bottom: 40px; 
     }
 	#text{
       position: absolute;
@@ -56,125 +56,232 @@
  
  <div id="map">
  <script type="text/javascript">
-    ymaps.ready(init);
-    var myMap;
-
-    function init(){     
-        myMap = new ymaps.Map("map", {
-            center: [30.00, 30.00],
-            zoom: 3
-        }),
-        clusterer = new ymaps.Clusterer({clusterDisableClickZoom: true}),
-        getPointData = function (index) {
-            return {
-                balloonContentBody: 'Привет! <img src="' + content[index] + '" alt="альтернативный текст" width="200">"',
-                clusterCaption: 'МИИГАиК <strong>' + index + '</strong>'
-            };
-        },
-        points = [
-        ],
-        geoObjects = [];
-
+ymaps.ready(init);
+var myMap;
+function init(){     
+    myMap = new ymaps.Map("map", {
+        center: [30.00, 30.00],
+        zoom: 3
+    }),
+    clusterer = new ymaps.Clusterer({clusterDisableClickZoom: true}),
+    getPointData = function (index) {
+        return {
+            balloonContentBody: 'Привет! <img src="' + content[index] + '" alt="альтернативный текст" width="800">',
+            clusterCaption: 'МИИГАиК <strong>' + index + '</strong>',
+        };
+    },
+    points = [
+    ],
+    geoObjects = [];
 //Записываем геометри__________________
-		 
-	geoObjects[geoObjects.length] = new ymaps.Placemark([44.436668, 26.100045], { clusterCaption: '1', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1739877/1739877_2000.jpg" alt="альтернативный текст" width="200">"'}, {
-      preset: 'islands#redGlyphIcon',            
-      iconGlyph: 'star',
-      iconGlyphColor: 'red',
-    });
-	
-		 
-	geoObjects[geoObjects.length] = new ymaps.Placemark([55.419863, 37.539801], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1761484/1761484_2000.jpg" alt="альтернативный текст" width="200">"'}, {
-      preset: 'islands#redGlyphIcon',            
-      iconGlyph: 'star',
-      iconGlyphColor: 'red',
-    });
+        
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.420925, 37.535095], { clusterCaption: 'МИР в Подольске', balloonContent: 'Изостудия "Колорит" ДК Октябрь г. Подольск. Плакат делали с детьми 6-10 лет.<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1761484/1761484_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+        
 
-	 
-	geoObjects[geoObjects.length] = new ymaps.Placemark([55.752007, 37.617912], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1762202/1762202_original.jpg" alt="альтернативный текст" width="200">"'}, {
-      preset: 'islands#redGlyphIcon',            
-      iconGlyph: 'star',
-      iconGlyphColor: 'red',
-    });
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.761199, 37.583554], { clusterCaption: 'МИР и международный Лунариум', balloonContent: 'МИР и международный Лунариум<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1761557/1761557_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
 
-geoObjects[geoObjects.length] = new ymaps.Placemark([59.930095, 30.321093], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1758619/1758619_original.jpg" alt="альтернативный текст" width="200">"'}, {
-      preset: 'islands#redGlyphIcon',            
-      iconGlyph: 'star',
-      iconGlyphColor: 'red',
-    });
-	
-	geoObjects[geoObjects.length] = new ymaps.Placemark([55.752007, 37.617912], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1756193/1756193_original.jpg" alt="альтернативный текст" width="200">"'}, {
-      preset: 'islands#redGlyphIcon',            
-      iconGlyph: 'star',
-      iconGlyphColor: 'red',
-    });
-	
-	geoObjects[geoObjects.length] = new ymaps.Placemark([46.039605, 24.894001], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1754223/1754223_2000.jpg" alt="альтернативный текст" width="200">"'}, {
-      preset: 'islands#redGlyphIcon',            
-      iconGlyph: 'star',
-      iconGlyphColor: 'red',
-    });
-	
-	geoObjects[geoObjects.length] = new ymaps.Placemark([36.803475, 10.172322], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1752256/1752256_original.jpg" alt="альтернативный текст" width="200">"'}, {
-      preset: 'islands#redGlyphIcon',            
-      iconGlyph: 'star',
-      iconGlyphColor: 'red',
-    });
+geoObjects[geoObjects.length] = new ymaps.Placemark([43.267384, 41.584326], { clusterCaption: 'МИР на природе', balloonContent: 'Прислала Ангелина Брызгалина, фото с похода по маршруту Псебай-Адлер,. западный Кавказ, 2015 год<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1760913/1760913_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
 
-geoObjects[geoObjects.length] = new ymaps.Placemark([27.713476, 85.309570], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1746212/1746212_2000.jpg" alt="альтернативный текст" width="200">"'}, {
-      preset: 'islands#redGlyphIcon',            
-      iconGlyph: 'star',
-      iconGlyphColor: 'red',
-    });
-	
-	geoObjects[geoObjects.length] = new ymaps.Placemark([55.102342, 36.624824], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1750494/1750494_2000.jpg" alt="альтернативный текст" width="200">"'}, {
-      preset: 'islands#redGlyphIcon',            
-      iconGlyph: 'star',
-      iconGlyphColor: 'red',
-    });
-	
-	geoObjects[geoObjects.length] = new ymaps.Placemark([35.669550, 51.423130], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1744799/1744799_original.jpg" alt="альтернативный текст" width="200">"'}, {
-      preset: 'islands#redGlyphIcon',            
-      iconGlyph: 'star',
-      iconGlyphColor: 'red',
-    });
-	
-	geoObjects[geoObjects.length] = new ymaps.Placemark([42.690115, 23.309803], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1740095/1740095_2000.jpg" alt="альтернативный текст" width="200">"'}, {
-      preset: 'islands#redGlyphIcon',            
-      iconGlyph: 'star',
-      iconGlyphColor: 'red',
-    });
-	
-		geoObjects[geoObjects.length] = new ymaps.Placemark([30.056953, 31.248723], { clusterCaption: '2', balloonContent: 'МИР!<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1751636/1751636_2000.jpg" alt="альтернативный текст" width="200">"'}, {
-      preset: 'islands#redGlyphIcon',            
-      iconGlyph: 'star',
-      iconGlyphColor: 'red',
-    });
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.754559, 37.619804], { clusterCaption: 'МИР на Красной площади, 8 декабря 2018 года', balloonContent: 'МИР на Красной площади, 8 декабря 2018 года<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1766208/1766208_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.757353, 37.659722], { clusterCaption: 'МИР: диалектика тождества и различия', balloonContent: 'МИР: диалектика тождества и различия<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1764732/1764732_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([46.767745, 23.591097], { clusterCaption: 'Студенты-русисты Университета им. Бабеша-Бойаи, г. Клуж-Напока, Румыния', balloonContent: 'Студенты-русисты Университета им. Бабеша-Бойаи, г. Клуж-Напока, Румыния<br><img src="https://scontent.fhel6-1.fna.fbcdn.net/v/t1.0-9/44502102_1764198090356239_2868368916218904576_n.jpg?_nc_cat=104&_nc_ht=scontent.fhel6-1.fna&oh=1c7e268afbd84e2dc6c86da0997d0cda&oe=5C6361EE" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.822690, 37.516003], { clusterCaption: 'Акция МИР', balloonContent: '7 ноября 2018 года в честь праздников нашей страны - годовщины социалистической революции и в ознаменовании парада защитников Москвы на Красной площади 1941 года - в нашей школе ГБПОУ ПК имени Н.Н. Годовикова силами 105 человек, учащимися 8-11 классов было сложено слово "МИР". Это русское слово должно быть понятно на всех языках и восторжествовать на всей планете! Мы за мир!<br><img src="http://pkgodovikov.mskobr.ru/images/IMG_0461.JPG" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.822653, 37.639736], { clusterCaption: 'МИР с московским монументом "Покорителям космоса"', balloonContent: 'МИР с московским монументом "Покорителям космоса"<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1759006/1759006_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([59.955672, 30.306204], { clusterCaption: 'МИР в школе Санкт-Петербурга', balloonContent: 'МИР в школе Санкт-Петербурга, 7а класс ГБОУ СОШ № 87 Петроградского района Санкт-Петербурга, прислала Яцун Алена<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1758619/1758619_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.763695, 37.661736], { clusterCaption: 'МИР - всему голова', balloonContent: 'МИР - всему голова<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1758119/1758119_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.633019, 37.443437], { clusterCaption: 'МИР на станции метро "Румянцево"', balloonContent: 'МИР на станции метро "Румянцево"<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1757772/1757772_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.804932, 37.744547], { clusterCaption: 'МИР на станции метро "Черкизовская"', balloonContent: 'МИР на станции метро "Черкизовская"<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1757653/1757653_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.645740, 37.472378], { clusterCaption: 'МИР на станции метро "Тропарево"', balloonContent: 'МИР на станции метро "Тропарево"<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1757191/1757191_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.735897, 37.517502], { clusterCaption: 'МИР на станции метро "Парк Победы"', balloonContent: 'МИР в истории метрополитена Москвы"<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1757090/1757090_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.709242, 37.557593], { clusterCaption: 'МИР на станции метро "Воробьевы горы"', balloonContent: 'МИР на станции метро "Воробьевы горы"<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1756818/1756818_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.692576, 37.533490], { clusterCaption: 'МИР на станции метро "Университет"', balloonContent: 'МИР на станции метро "Университет"<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1756668/1756668_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.699878, 37.519733], { clusterCaption: 'МИР на философском факультете', balloonContent: 'Образно-смысловая деятельность на Философском факультете МГУ им. М.В.Ломоносова<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1755163/1755163_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.709308, 37.542297], { clusterCaption: 'МИР и писатели-классики', balloonContent: 'Скульптура М.Горького из Дома Культуры МГУ на Воробьевых горах. Вид - со смотровой площадки на Воробьевых горах<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1755794/1755794_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.702463, 37.529518], { clusterCaption: 'Фото с русским словом МИР для просвещения', balloonContent: 'Владимир Шкорботов, у памятника М.В.Ломоносову и здания МГУ на Воробьевых горах, Москва<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1754573/1754573_1000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([44.428063, 26.102446], { clusterCaption: 'МИР в Бухаресте', balloonContent: 'МИР в Бухаресте<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1754223/1754223_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.751993, 37.615789], { clusterCaption: 'МИР в Государственном Кремлевском Дворце', balloonContent: 'Дарья Зимина<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1751266/1751266_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([36.817264, 10.184925], { clusterCaption: 'МИР в Высшем институте языков Туниса', balloonContent: 'МИР в Высшем институте языков Туниса<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1746987/1746987_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
 
 
+geoObjects[geoObjects.length] = new ymaps.Placemark([28.244893, 83.908244], { clusterCaption: 'МИР в Непале', balloonContent: 'Непал, Катманду, самая высокая страна мира<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1746212/1746212_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([30.065993, 31.266061], { clusterCaption: 'МИР в Египте', balloonContent: 'МИР в Каире<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1751636/1751636_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([33.872509, 9.577406], { clusterCaption: 'МИР в Тунисе', balloonContent: 'МИР в клубе "Мы и Россия"<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1763681/1763681_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.088949, 36.659744], { clusterCaption: 'МИР на Аллее Славы', balloonContent: 'МИР на Аллее Славы (г. Обнинск, Виталий Лыгин)<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1750494/1750494_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
 
 
+geoObjects[geoObjects.length] = new ymaps.Placemark([35.661703, 51.367734], { clusterCaption: 'МИР в Тегеране', balloonContent: 'МИР в Тегеране<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1744420/1744420_original.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
 
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.767239, 37.659599], { clusterCaption: 'МИР в Саду им. Баумана', balloonContent: 'МИР в московском Саду им. Баумана (г. Москва, фото Виталия Лыгина)<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1750854/1750854_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.763416, 37.661729], { clusterCaption: 'МИР в человеке', balloonContent: 'МИР в человеке<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1741134/1741134_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([42.141997, 24.756455], { clusterCaption: 'МИР в Болгарии', balloonContent: 'Фотография студентов с русским словом МИР, из города Пловдив, Болгария.<br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1740095/1740095_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
+
+geoObjects[geoObjects.length] = new ymaps.Placemark([55.763234, 37.661573], { clusterCaption: 'МИР', balloonContent: 'МИР диалектически отображается, МИР диалектически осмысливается. МИР диалектически поддерживается, МИР диалектически преобразуется, МИР диалектически переосмысливается... <br><img src="https://ic.pics.livejournal.com/dialectic_stamp/79755844/1608559/1608559_2000.jpg" alt="альтернативный текст" width="400">'}, {
+    preset: 'islands#redGlyphIcon',            
+    iconGlyph: 'star',
+    iconGlyphColor: 'red',balloonMaxWidth: '400', balloonMaxHeight: 'auto'
+});
 
 //Закончили запись меток	
-		
-		clusterer.add(geoObjects);
-		myMap.geoObjects.add(clusterer);
-
-	/*	// Откроем балун на третьей метке в массиве.
-		var objectState = clusterer.getObjectState(geoObjects[2]);
-		if (objectState.isClustered) {
-			// Если метка находится в кластере, выставим ее в качестве активного объекта.
-			// Тогда она будет "выбрана" в открытом балуне кластера.
-			objectState.cluster.state.set('activeObject', geoObjects[2]);
-			clusterer.balloon.open(objectState.cluster);
-		} else if (objectState.isShown) {
-			// Если метка не попала в кластер и видна на карте, откроем ее балун.
-			geoObjects[2].balloon.open();
-		}	*/	
-		
-
-    }
+    
+    clusterer.add(geoObjects);
+    myMap.geoObjects.add(clusterer);
+/*	// Откроем балун на третьей метке в массиве.
+    var objectState = clusterer.getObjectState(geoObjects[2]);
+    if (objectState.isClustered) {
+        // Если метка находится в кластере, выставим ее в качестве активного объекта.
+        // Тогда она будет "выбрана" в открытом балуне кластера.
+        objectState.cluster.state.set('activeObject', geoObjects[2]);
+        clusterer.balloon.open(objectState.cluster);
+    } else if (objectState.isShown) {
+        // Если метка не попала в кластер и видна на карте, откроем ее балун.
+        geoObjects[2].balloon.open();
+    }	*/	
+    
+}
 
 </script>
  </div>
